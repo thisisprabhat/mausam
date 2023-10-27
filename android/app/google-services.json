@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "552523669261",
+    "project_id": "interview-5af02",
+    "storage_bucket": "interview-5af02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552523669261:android:42e194d914e0a148721a44",
+        "android_client_info": {
+          "package_name": "com.example.app_design_and_users"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552523669261-65fq69rfpt3pbjghitgd9859fq6mlbao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX9RC0vx2tDFM3dqKhinwx96V6zKNQqr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552523669261-65fq69rfpt3pbjghitgd9859fq6mlbao.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "552523669261-oqa3jbooqq5is6pi1qgdgpdo1qdi2s33.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.form.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552523669261:android:e8fe03522f8013b8721a44",
+        "android_client_info": {
+          "package_name": "com.example.form"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552523669261-65fq69rfpt3pbjghitgd9859fq6mlbao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX9RC0vx2tDFM3dqKhinwx96V6zKNQqr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552523669261-65fq69rfpt3pbjghitgd9859fq6mlbao.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "552523669261-oqa3jbooqq5is6pi1qgdgpdo1qdi2s33.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.form.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552523669261:android:8f7adfa53aab1ad0721a44",
+        "android_client_info": {
+          "package_name": "com.example.weather_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552523669261-65fq69rfpt3pbjghitgd9859fq6mlbao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX9RC0vx2tDFM3dqKhinwx96V6zKNQqr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552523669261-65fq69rfpt3pbjghitgd9859fq6mlbao.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "552523669261-oqa3jbooqq5is6pi1qgdgpdo1qdi2s33.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.form.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
