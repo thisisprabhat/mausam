@@ -1,10 +1,21 @@
-import 'base_exception.dart';
+import 'dart:async';
+import 'dart:io';
+
+import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
+
+import '/core/utils/colored_log.dart';
+
+part 'base_exception.dart';
+part 'exception_handler.dart';
 
 class AuthenticationException extends AppException {
-  AuthenticationException(
-      {super.title = 'Authentication Failed',
-      super.message = 'Authentication Failed, try again',
-      super.exceptionType = 'Auth Exception'});
+  AuthenticationException({
+    super.title = 'Authentication Failed',
+    super.message = 'Authentication Failed, try again',
+    super.exceptionType = 'Auth Exception',
+  });
 }
 
 class InternetSocketException extends AppException {
@@ -90,6 +101,7 @@ class TooManyRequestException extends AppException {
           title: 'Too Many Requests',
           message:
               'You have made more requests per second than you are allowed.',
+          exceptionType: 'TooManyRequestException',
         );
 }
 
@@ -98,6 +110,7 @@ class InternalServerException extends AppException {
       : super(
           title: 'Internal Server Error',
           message: 'We had a problem with our server. Try again later.',
+          exceptionType: 'InternalServerException',
         );
 }
 
@@ -107,5 +120,24 @@ class ServiceUnavailableException extends AppException {
           title: 'Service Unavailable',
           message:
               "We're temporarily offline for maintenance. Please try again later.",
+          exceptionType: 'ServiceUnavailableException',
+        );
+}
+
+class LocationNotFound extends AppException {
+  LocationNotFound()
+      : super(
+          exceptionType: 'LocationNotFoundException',
+          title: 'Location Not Found',
+          message: 'We couldn\'t find the location your are searching for',
+        );
+}
+
+class FirestoreException extends AppException {
+  FirestoreException({
+    super.title = 'Firestore error',
+    super.message = 'There is something wrong with your request',
+  }) : super(
+          exceptionType: 'FirestoreException',
         );
 }

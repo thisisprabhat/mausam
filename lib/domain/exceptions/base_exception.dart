@@ -1,4 +1,4 @@
-import 'package:furnifi/core/utils/colored_log.dart';
+part of 'app_exception.dart';
 
 class AppException implements Exception {
   final String? title;
