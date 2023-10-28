@@ -1,12 +1,12 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc/bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:weather_app/data/models/user_model.dart';
-import 'package:weather_app/data/repositories/user_repository/user_repo.dart';
 
 import '/domain/exceptions/app_exception.dart';
 import '/data/repositories/app_repository.dart';
 import '/data/repositories/auth_repository/auth_repo.dart';
+import '/data/models/user_model.dart';
+import '/data/repositories/user_repository/user_repo.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -32,6 +32,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await _authRepo.logInWithEmailAndPassword(
           event.email ?? "", event.password ?? "");
       if (_authRepo.isLoggedIn()) {
+        user = await _userRepo.getUserById();
         emit(AuthStateLoginSuccess());
       }
     } on AppException catch (e) {

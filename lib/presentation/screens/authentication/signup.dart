@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/data/models/user_model.dart';
-import 'package:weather_app/domain/bloc/auth_bloc/auth_bloc.dart';
-import 'package:weather_app/presentation/screens/today/today.dart';
-import 'package:weather_app/presentation/widgets/loader.dart';
 
+import '/data/models/user_model.dart';
+import '/domain/bloc/auth_bloc/auth_bloc.dart';
+import '/presentation/screens/homescreen/homescreen.dart';
 import '/core/utils/input_validation.dart';
+import '/presentation/widgets/loader.dart';
 
 part 'components/signup_text_fields.dart';
 
@@ -36,8 +36,12 @@ class _SignupState extends State<Signup> {
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthStateCreatingUserSuccess) {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const TodayWeather()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomeScreen(),
+              ),
+            );
           }
         },
         builder: (context, state) {

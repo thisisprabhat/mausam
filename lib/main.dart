@@ -5,6 +5,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '/core/config/firebase_options.dart';
 import '/domain/bloc/auth_bloc/auth_bloc.dart';
+import '/domain/bloc/forecast_bloc/forecast_bloc.dart';
+import '/domain/bloc/weather_bloc/weather_bloc.dart';
 import '/presentation/screens/splash/splash.dart';
 
 void main() async {
@@ -22,6 +24,8 @@ class WeatherApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => AuthBloc()),
+        BlocProvider(create: (_) => WeatherBloc()),
+        BlocProvider(create: (_) => ForecastBloc()),
       ],
       child: MaterialApp(
         theme: ThemeData.dark(useMaterial3: true),

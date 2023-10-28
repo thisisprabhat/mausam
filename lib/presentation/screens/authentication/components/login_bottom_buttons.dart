@@ -14,20 +14,22 @@ class LoginBottomButtons extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 40),
-        ElevatedButton(
-          onPressed: onLoginPressed,
-          child: const Text('Login'),
+        ConstrainedBox(
+          constraints: const BoxConstraints(minWidth: 500),
+          child: ElevatedButton(
+            onPressed: onLoginPressed,
+            child: const Text('Login'),
+          ),
         ),
         const SizedBox(height: 10),
-        TextButton(
-          style: TextButton.styleFrom(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          ),
-          onPressed: onCreateNewAccountPressed,
-          child: const Text(
-            'Create new account',
-            style: TextStyle(fontSize: 20),
+        ConstrainedBox(
+          constraints: const BoxConstraints(minWidth: 500),
+          child: TextButton(
+            onPressed: onCreateNewAccountPressed,
+            child: const Text(
+              'Create new account',
+              style: TextStyle(fontSize: 20),
+            ),
           ),
         ),
         SizedBox(height: MediaQuery.sizeOf(context).height * 0.11),

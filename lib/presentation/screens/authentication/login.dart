@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '/presentation/screens/homescreen/homescreen.dart';
 import '/domain/bloc/auth_bloc/auth_bloc.dart';
 import '/presentation/widgets/loader.dart';
-import '/presentation/screens/today/today.dart';
 import '/presentation/screens/authentication/signup.dart';
 import '/core/utils/input_validation.dart';
 
@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const TodayWeather(),
+              builder: (context) => const HomeScreen(),
             ),
           );
         }

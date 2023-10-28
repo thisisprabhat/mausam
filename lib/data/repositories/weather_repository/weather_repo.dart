@@ -17,9 +17,9 @@ class WeatherRepo implements WeatherRepoInterface {
     try {
       late String param;
       if (city != null) {
-        param = 'q=$city';
+        param = 'q=$city&units=metric';
       } else if (coord != null) {
-        param = 'lat=${coord.lat}&lon=${coord.lon}';
+        param = 'lat=${coord.lat}&lon=${coord.lon}&units=metric';
       } else {
         throw LocationNotFound();
       }
@@ -50,9 +50,9 @@ class WeatherRepo implements WeatherRepoInterface {
     try {
       late String param;
       if (city != null) {
-        param = 'q=$city';
+        param = 'q=$city&units=metric';
       } else if (coord != null) {
-        param = 'lat=${coord.lat}&lon=${coord.lon}';
+        param = 'lat=${coord.lat}&lon=${coord.lon}&units=metric';
       } else {
         throw LocationNotFound();
       }

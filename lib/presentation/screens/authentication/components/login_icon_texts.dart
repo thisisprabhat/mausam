@@ -15,13 +15,14 @@ class LoginIconAndTexts extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(
-            'Assets.iconForeground',
+            'assets/images/app_icon.png',
             color: Theme.of(context).brightness == Brightness.light
                 ? Colors.black87
                 : null,
             height: 100,
             width: 100,
           ),
+          const SizedBox(height: 12),
           const Text(
             'Weather App',
             style: TextStyle(fontSize: 26),

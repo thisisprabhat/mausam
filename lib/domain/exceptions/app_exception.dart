@@ -125,11 +125,11 @@ class ServiceUnavailableException extends AppException {
 }
 
 class LocationNotFound extends AppException {
-  LocationNotFound()
-      : super(
+  LocationNotFound({
+    super.title = 'Location Not Found',
+    super.message = 'We couldn\'t find the location your are searching for',
+  }) : super(
           exceptionType: 'LocationNotFoundException',
-          title: 'Location Not Found',
-          message: 'We couldn\'t find the location your are searching for',
         );
 }
 

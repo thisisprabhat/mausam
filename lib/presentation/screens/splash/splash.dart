@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '/domain/bloc/auth_bloc/auth_bloc.dart';
 import '/presentation/screens/authentication/login.dart';
-import '/presentation/screens/today/today.dart';
+import '/presentation/screens/homescreen/homescreen.dart';
 import '/presentation/widgets/loader.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const TodayWeather(),
+              builder: (context) => const HomeScreen(),
             ),
           );
         } else {

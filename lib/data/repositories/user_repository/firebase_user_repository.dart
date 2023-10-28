@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:weather_app/domain/exceptions/app_exception.dart';
 
+import '/domain/exceptions/app_exception.dart';
 import '/data/models/user_model.dart';
 import '/data/repositories/user_repository/user_repo.dart';
 

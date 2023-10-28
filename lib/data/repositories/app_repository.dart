@@ -1,4 +1,5 @@
-import 'package:weather_app/data/repositories/user_repository/firebase_user_repository.dart';
+import '/data/repositories/user_repository/firebase_user_repository.dart';
+import '/data/repositories/weather_repository/weather_repo.dart';
 
 import 'auth_repository/firebase_auth_repo.dart';
 
@@ -9,6 +10,10 @@ class AppRepository {
 
   get userRepository {
     return FirebaseUserRepository();
+  }
+
+  get weatherRepository {
+    return WeatherRepo();
   }
 
   /// Singleton factory Constructor

@@ -171,6 +171,16 @@ class Sys {
   final int? sunrise;
   final int? sunset;
 
+  get convertedSunrise {
+    final val = DateTime.fromMillisecondsSinceEpoch((sunrise ?? 0) * 1000);
+    return '${val.hour < 10 ? '0${val.hour}' : val.hour}:${val.minute < 10 ? '0${val.minute}' : val.minute}';
+  }
+
+  get convertedSunset {
+    final val = DateTime.fromMillisecondsSinceEpoch((sunset ?? 0) * 1000);
+    return '${val.hour < 10 ? '0${val.hour}' : val.hour}:${val.minute < 10 ? '0${val.minute}' : val.minute}';
+  }
+
   Sys({
     this.country,
     this.sunrise,
@@ -231,6 +241,29 @@ class Wind {
   final double? speed;
   final int? deg;
   final double? gust;
+
+  String get dir {
+    const windDirections = [
+      "↑N",
+      "NNE",
+      "↗NE",
+      "ENE",
+      "→E",
+      "ESE",
+      "↘SE",
+      "SSE",
+      "↓S",
+      "SSW",
+      "↙SW",
+      "WSW",
+      "←W",
+      "WNW",
+      "↖NW",
+      "NNW"
+    ];
+
+    return windDirections[((deg! / 22.5) + 0.5).toInt() % 16];
+  }
 
   Wind({
     this.speed,

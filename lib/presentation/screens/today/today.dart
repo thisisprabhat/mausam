@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/domain/bloc/auth_bloc/auth_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:weather_app/presentation/screens/today/components/current_weather_details.dart';
 
-import '/domain/exceptions/app_exception.dart';
-import '/data/repositories/weather_repository/weather_repo.dart';
+import '/data/models/weather_model.dart';
+import '/domain/bloc/weather_bloc/weather_bloc.dart';
+import '/presentation/widgets/error_widget.dart';
+import '/presentation/widgets/loader.dart';
 
 class TodayWeather extends StatefulWidget {
   const TodayWeather({super.key});
@@ -13,38 +16,46 @@ class TodayWeather extends StatefulWidget {
 }
 
 class _TodayWeatherState extends State<TodayWeather> {
-  _getWeather() async {
-    final repo = WeatherRepo();
-    try {
-      await repo.getWeather(city: 'Ranchi');
-    } on AppException catch (e) {
-      e.print;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<AuthBloc>().user;
     return Scaffold(
-      appBar: AppBar(title: const Text("Today")),
-      body: SizedBox(
-        height: double.maxFinite,
-        width: double.maxFinite,
-        child: Column(
-          children: [
-            Text(user!.name),
-            ElevatedButton(
+      body: BlocBuilder<WeatherBloc, WeatherState>(
+        builder: (context, state) {
+          if (state is WeatherStateLoading || state is WeatherStateInitial) {
+            return const Loader();
+          } else if (state is WeatherStateFailedLoading) {
+            return CustomErrorWidget(
+              exceptionCaught: state.exception,
               onPressed: () {
-                _getWeather();
+                context
+                    .read<WeatherBloc>()
+                    .add(WeatherEventGetFromCurrentLocation());
               },
-              child: const Text("Get today's Weather"),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("Get Weather Forecast"),
-            ),
-          ],
-        ),
+            );
+          } else if (state is WeatherStateLoadedSuccefully) {
+            DailyWeather? weather = state.weather;
+            final icon = weather?.weather?.first.icon;
+            final weatherDetails = weather?.weather?.first;
+            return ListView(
+              children: [
+                SvgPicture.asset(
+                  icon == null ? 'assets/svg/01d.svg' : 'assets/svg/$icon.svg',
+                  height: 200,
+                  width: 200,
+                ),
+                Center(
+                  child: Text(
+                    weatherDetails?.description ?? '',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+                CurrentWeatherDetails(weather: weather)
+              ],
+            );
+          } else {
+            return const SizedBox.shrink();
+          }
+        },
       ),
     );
   }
