@@ -14,6 +14,7 @@ class UserModel {
     this.lastName,
   });
 
+  String get name => "$firstName $lastName";
   UserModel copyWith({
     String? uId,
     String? email,

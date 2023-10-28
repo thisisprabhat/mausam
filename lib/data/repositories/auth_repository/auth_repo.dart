@@ -6,7 +6,7 @@ abstract class AuthRepository {
   User get loggedFirebaseUser;
 
   /// Creates a new user with the provided [information]
-  Future<void> signUp(UserModel newUser, String password);
+  Future<void> signUp(UserModel newUser);
 
   /// Signs in with the provided [email] and [password].
   Future<void> logInWithEmailAndPassword(String email, String password);

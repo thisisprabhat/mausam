@@ -15,11 +15,11 @@ class FirebaseAuthRepository implements AuthRepository {
 
   /// Creates a new user with the provided [information]
   @override
-  Future<void> signUp(UserModel newUser, String password) async {
+  Future<void> signUp(UserModel newUser) async {
     try {
       var userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
-        email: newUser.email ?? "",
-        password: password,
+        email: newUser.email ?? '',
+        password: newUser.password ?? '',
       );
       // Add id for new user
       final user = newUser.copyWith(uId: userCredential.user!.uid);
@@ -53,12 +53,6 @@ class FirebaseAuthRepository implements AuthRepository {
     await _firebaseAuth
         .signOut()
         .catchError(AppExceptionHandler.handleAuthException);
-  }
-
-  @override
-  Future<void> forgotPassword(String email) {
-    // TODO: implement forgotPassword
-    throw UnimplementedError();
   }
 
   ///Singleton factory

@@ -41,6 +41,25 @@ class AppExceptionHandler {
     }
   }
 
+  static handleFirebaseException(Object error) {
+    if (error is SocketException) {
+      throw InternetSocketException(error.message);
+    } else if (error is FirebaseException) {
+      throw FirestoreException(title: error.code, message: error.message);
+    } else if (error is TimeoutException) {
+      throw ApiTimeOutException(error.message);
+    } else if (error is PlatformException) {
+      AppException(
+          exceptionType: 'Platform Exception',
+          title: error.code,
+          message: error.message);
+    } else if (error is AppException) {
+      throw error;
+    } else {
+      throw AppException();
+    }
+  }
+
   ///## Status codes converted into Exceptions
   ///400. BadRequestException(),
   ///401. UnAuthorizedException(),
