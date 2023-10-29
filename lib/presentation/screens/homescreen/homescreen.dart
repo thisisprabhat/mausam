@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/presentation/screens/search/search_page.dart';
 
 import '/domain/bloc/weather_bloc/weather_bloc.dart';
 import '../forecast/forecast_screen.dart';
@@ -45,7 +46,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {}, //TODO: Search Page Implementation
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SearchPage(),
+                ),
+              );
+            },
             icon: const Icon(Icons.search_rounded),
           )
         ],

@@ -5,8 +5,8 @@ import 'weather_model.dart' show Coord, Clouds, Wind;
 // ignore_for_file: constant_identifier_names
 class Forecast {
   final String? cod;
-  final int? message;
-  final int? cnt;
+  final num? message;
+  final num? cnt;
   final List<ListElement>? list;
   final City? city;
 
@@ -17,20 +17,6 @@ class Forecast {
     this.list,
     this.city,
   });
-
-  List<List<ListElement>> get mappedForecastList {
-    List<List<ListElement>> value = [];
-    int index = 0;
-    int? day;
-
-    for (ListElement e in list!) {
-      day ??= e.dtTxt?.day;
-      index = (e.dtTxt?.day ?? 0 - day!);
-      value[index].add(e);
-      print(e.toJson());
-    }
-    return value;
-  }
 
   factory Forecast.fromRawJson(String str) =>
       Forecast.fromJson(json.decode(str));
@@ -60,14 +46,14 @@ class Forecast {
 }
 
 class City {
-  final int? id;
+  final num? id;
   final String? name;
   final Coord? coord;
   final String? country;
-  final int? population;
-  final int? timezone;
-  final int? sunrise;
-  final int? sunset;
+  final num? population;
+  final num? timezone;
+  final num? sunrise;
+  final num? sunset;
 
   City({
     this.id,
@@ -108,13 +94,13 @@ class City {
 }
 
 class ListElement {
-  final int? dt;
+  final num? dt;
   final MainClass? main;
   final List<Weather>? weather;
   final Clouds? clouds;
   final Wind? wind;
-  final int? visibility;
-  final int? pop;
+  final num? visibility;
+  final num? pop;
   final SysPod? sys;
   final DateTime? dtTxt;
 
@@ -166,15 +152,15 @@ class ListElement {
 }
 
 class MainClass {
-  final double? temp;
-  final double? feelsLike;
-  final double? tempMin;
-  final double? tempMax;
-  final int? pressure;
-  final int? seaLevel;
-  final int? grndLevel;
-  final int? humidity;
-  final double? tempKf;
+  final num? temp;
+  final num? feelsLike;
+  final num? tempMin;
+  final num? tempMax;
+  final num? pressure;
+  final num? seaLevel;
+  final num? grndLevel;
+  final num? humidity;
+  final num? tempKf;
 
   MainClass({
     this.temp,
@@ -243,7 +229,7 @@ enum Pod { D, N }
 final podValues = EnumValues({"d": Pod.D, "n": Pod.N});
 
 class Weather {
-  final int? id;
+  final num? id;
   final MainEnum? main;
   final Description? description;
   final String? icon;
