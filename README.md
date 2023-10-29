@@ -1,16 +1,22 @@
-# weather_app
+# Mausam
 
-A new Flutter project.
+A weather app built using flutter and openWeatherMap api
 
-## Getting Started
+## Features
+- Top-Notch Error handling
+- Firebase login
+- Bloc Pattern
+- Clean Architecture
+- Daily weather details
+- Weather forecast for 5 days
 
-This project is a starting point for a Flutter application.
+## How to setup
+- To use this project get your api key from openWeatherMap
+- Rename the `.env.example` from the project's root directory to `.env`
+- Now paste your apiKey inside `.env`
+```
+api_key=[ADD YOUR OWN OPENWEATHERMAP API KEY FROM https://home.openweathermap.org/api_keys]
+```
+- You also should setUp firebase with your own credentials
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Congrats you have completed the setup now you can run the project.

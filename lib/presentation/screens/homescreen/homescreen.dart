@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/presentation/screens/search/search_page.dart';
+import 'package:mausam/presentation/screens/search/search_page.dart';
 
 import '/domain/bloc/weather_bloc/weather_bloc.dart';
 import '../forecast/forecast_screen.dart';

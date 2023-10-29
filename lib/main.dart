@@ -28,6 +28,7 @@ class WeatherApp extends StatelessWidget {
         BlocProvider(create: (_) => ForecastBloc()),
       ],
       child: MaterialApp(
+        title: 'Mausam',
         theme: ThemeData.dark(useMaterial3: true),
         debugShowCheckedModeBanner: false,
         home: const SplashScreen(),
