@@ -17,50 +17,6 @@ A weather app built using flutter and openWeatherMap api
 ```
 api_key=[ADD YOUR OWN OPENWEATHERMAP API KEY FROM https://home.openweathermap.org/api_keys]
 ```
-- You also should setUp firebase with your own credentials
+- You should also setUp firebase with your own credentials
 
 Congrats you have completed the setup now you can run the project.
-
-
-## ScreenShots
-<img src="readme_res/screenshots/homescreen.jpg" alt="image" width="200" >
-<img src="readme_res/screenshots/forecast.jpg" alt="image" width="200" >
-<img src="readme_res/screenshots/login.jpg" alt="image" width="200" >
-<img src="readme_res/screenshots/search.jpg" alt="image" width="200" >
-<img src="readme_res/screenshots/signup.jpg" alt="image" width="200" >
-<img src="readme_res/screenshots/logout.jpg" alt="image" width="200" >
-
-
-## Project Structure
-```
-lib
-├───core
-│   ├───config
-│   ├───constants
-│   └───utils
-├───domain
-│   ├───exceptions
-│   └───bloc
-│       ├───auth_bloc
-│       ├───weather_bloc
-│       └───forecast_bloc
-├───presentation
-│   ├───screens
-│   │   ├───current_weather
-│   │   │   └───components
-│   │   ├───forecast
-│   │   │   └───components
-│   │   ├───authentication
-│   │   │   └───components
-│   │   ├───splash
-│   │   ├───homescreen
-│   │   │   └───components
-│   │   └───search
-│   └───widgets
-└───data
-    ├───models
-    └───repositories
-        ├───auth_repository
-        ├───user_repository
-        └───weather_repository
-```
