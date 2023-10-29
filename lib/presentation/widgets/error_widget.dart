@@ -18,10 +18,13 @@ class CustomErrorWidget extends StatelessWidget {
         children: [
           Text(
             exception.title ?? "",
+            textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleLarge,
           ),
+          const SizedBox(height: 10),
           Text(
             exception.message ?? "",
+            textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           if (onPressed != null) ...[

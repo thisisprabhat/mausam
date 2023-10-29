@@ -57,7 +57,7 @@ class WeatherRepo implements WeatherRepoInterface {
         throw LocationNotFound();
       }
 
-      String url = '${UrlConstants.dailyWeather}?appid=$apiKey&$param';
+      String url = '${UrlConstants.weatherForecast}?appid=$apiKey&$param';
       ColoredLog.green(url, name: 'GetWeather URL');
 
       Response response = await dio.get(url);
@@ -71,7 +71,7 @@ class WeatherRepo implements WeatherRepoInterface {
         AppExceptionHandler.throwException(null, response.statusCode);
       }
     } catch (e) {
-      ColoredLog.red(e, name: 'getWeather() error');
+      ColoredLog.red(e, name: 'getWeatherForecast() error');
       AppExceptionHandler.throwException(e);
     }
 

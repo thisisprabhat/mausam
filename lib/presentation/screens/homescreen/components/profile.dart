@@ -18,6 +18,7 @@ class Profile extends StatelessWidget {
             return SimpleDialog(
               alignment: Alignment.topLeft,
               children: [
+                const SizedBox(height: 12),
                 const Center(
                   child: CircleAvatar(
                     radius: 50,

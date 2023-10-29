@@ -18,13 +18,27 @@ class Forecast {
     this.city,
   });
 
+  List<List<ListElement>> get mappedForecastList {
+    List<List<ListElement>> value = [];
+    int index = 0;
+    int? day;
+
+    for (ListElement e in list!) {
+      day ??= e.dtTxt?.day;
+      index = (e.dtTxt?.day ?? 0 - day!);
+      value[index].add(e);
+      print(e.toJson());
+    }
+    return value;
+  }
+
   factory Forecast.fromRawJson(String str) =>
       Forecast.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
   factory Forecast.fromJson(Map<String, dynamic> json) => Forecast(
-        cod: json["cod"],
+        cod: json["cod"].toString(),
         message: json["message"],
         cnt: json["cnt"],
         list: json["list"] == null
