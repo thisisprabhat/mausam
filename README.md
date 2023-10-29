@@ -17,6 +17,6 @@ A weather app built using flutter and openWeatherMap api
 ```
 api_key=[ADD YOUR OWN OPENWEATHERMAP API KEY FROM https://home.openweathermap.org/api_keys]
 ```
-- You also should setUp firebase with your own credentials
+- You should also setUp firebase with your own credentials
 
 Congrats you have completed the setup now you can run the project.
